@@ -1,4 +1,5 @@
 import Button from "../Components/Button";
+import ProductCard from "../Components/ProductCard";
 
 const chairs = [
   {
@@ -41,16 +42,13 @@ const Overview = () => {
       </div>
 
       {chairs.map((chair, index) => (
-        <div key={index} className="flex flex-col items-center relative">
-          <div className="flex flex-col items-center space-y-2 w-[300px]">
-            <img src="/product-1.png" alt="" srcset="" />
-          </div>
-          <div className="flex flex-col items-center space-y-2 mt-4 font-semibold text-gray-700">
-            <p>Nordic Chair</p>
-            <p className="text-xl font-bold ">Ksh. 20,000</p>
-          </div>
-          <div className="absolute bg-amber-500"></div>
-        </div>
+        <ProductCard
+          productName={chair.name}
+          productImg={chair.image}
+          productPrice={chair.price}
+          index={index}
+          key={index}
+        />
       ))}
     </section>
   );
