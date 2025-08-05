@@ -35,7 +35,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-gray-200 pl-10 md:pl-20 pt-32 md:pt-40 flex md:flex-row flex-col items-center justify-between pb-32">
+    <section className="bg-gray-200 px-10 md:pl-20 pt-32 md:pt-40 flex md:flex-row flex-col items-center justify-between pb-32">
       <div className="md:w-1/2">
         <h2 className="text-3xl text-center md:text-start font-bold mb-8 text-gray-700">
           Why Choose Us?
