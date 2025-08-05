@@ -14,7 +14,7 @@ const Navbar = () => {
           Furni <span className="font-extrabold text-2xl">.</span>
         </h1>
       </div>
-      <div className="flex">
+      <div className="flex my-3">
         {navlinks.map((link) => (
           <NavLink
             to={link.path}

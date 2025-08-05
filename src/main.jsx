@@ -9,10 +9,17 @@ import {
   Route,
 } from "react-router-dom";
 
-import { HomePage } from "./App";
+import { Hero, HomePage, Home } from "./App";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<HomePage />} />)
+  createRoutesFromElements(
+    <Route path="/" element={<Home />}>
+      <Route index element={<HomePage />} />
+
+      <Route path="about" element={<div>About Page</div>} />
+      <Route path="contact" element={<div>Contact Page</div>} />
+    </Route>
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
