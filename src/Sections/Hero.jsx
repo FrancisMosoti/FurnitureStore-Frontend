@@ -2,8 +2,8 @@ import Button from "../Components/Button";
 
 const Hero = () => {
   return (
-    <div className="bg-[#365A4C] text-white flex justify-between p-10 ">
-      <div className="flex flex-col space-y-10 w-1/2 mt-16">
+    <div className="bg-[#365A4C] text-white flex justify-between p-10 flex-col md:flex-row items-center">
+      <div className="flex flex-col space-y-10 md:w-1/2 mt-16">
         <h1 className="font-extrabold text-5xl">
           Modern Interior Design Furniture Store
         </h1>
@@ -22,7 +22,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center">
+      <div className="md:w-1/2 flex justify-center items-center">
         <img src="/couch.png" alt="" srcset="" />
       </div>
     </div>
