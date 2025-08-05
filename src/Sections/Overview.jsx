@@ -30,10 +30,9 @@ const Overview = () => {
           Crafted with excellent material.
         </h1>
         <p className="text-lg text-gray-700">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat omnis
-          fuga minima? Laboriosam minus esse animi recusandae reiciendis
-          explicabo, nisi obcaecati dicta sit repudiandae eos sint error
-          facilis, asperiores dolor!
+          Our furniture is designed to provide comfort and style, making your
+          home a haven of relaxation and elegance. Explore our collection to
+          find the perfect pieces for your space.
         </p>
 
         <Button className=" px-6 py-2 rounded-full bg-gray-700 text-white font-semibold mr-4 border-2 border-transparent hover:border-[#365A4C] hover:text-gray-800 hover:bg-transparent transition-all duration-300 ease-in-out shadow hover:shadow-lg">
