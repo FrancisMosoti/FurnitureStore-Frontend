@@ -35,17 +35,17 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-gray-200 pl-20 md:pt-40 flex ">
-      <div className="md:w-1/2 ">
-        <h2 className="text-3xl font-bold mb-8 text-gray-700">
+    <section className="bg-gray-200 pl-10 md:pl-20 pt-32 md:pt-40 flex md:flex-row flex-col items-center justify-between pb-32">
+      <div className="md:w-1/2">
+        <h2 className="text-3xl text-center md:text-start font-bold mb-8 text-gray-700">
           Why Choose Us?
         </h2>
-        <p className="text-lg text-gray-700 mb-8 w-3/4">
+        <p className="text-lg text-center text-gray-700 mb-8 md:w-3/4 md:text-start">
           We are committed to providing high-quality furniture that meets your
           needs and exceeds your expectations. Our products are crafted with
           care, ensuring durability and style for your home or office.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {features.map((feature, index) => (
             <div className="p-3" key={index}>
               <p className="text-3xl">{feature.IconBase}</p>
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
-      <div className="md:w-1/2 flex justify-center items-center p-12">
+      <div className="md:w-1/2 flex justify-center items-center md:p-12 ">
         <img src="/why-choose-us-img.jpg" alt="" />
       </div>
     </section>

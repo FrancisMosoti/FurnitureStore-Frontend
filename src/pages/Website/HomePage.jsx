@@ -1,5 +1,6 @@
 import { Hero } from "../../App";
 import Overview from "../../Sections/Overview";
+import Testimonials from "../../Sections/Testimonials";
 import WhyChooseUs from "../../Sections/WhyChooseUs";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Hero />
       <Overview />
       <WhyChooseUs />
+      <Testimonials />
     </>
   );
 };
