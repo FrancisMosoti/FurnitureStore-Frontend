@@ -1,13 +1,13 @@
 import { Hero } from "../../App";
-import Navbar from "../../Sections/Navbar";
-import { Outlet } from "react-router-dom";
 import Overview from "../../Sections/Overview";
+import WhyChooseUs from "../../Sections/WhyChooseUs";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <Overview />
+      <WhyChooseUs />
     </>
   );
 };
