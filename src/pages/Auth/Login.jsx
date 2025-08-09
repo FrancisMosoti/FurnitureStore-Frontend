@@ -4,21 +4,21 @@ import Button from "../../Components/Button";
 
 const Login = () => {
   return (
-    <section className="bg-gray-1 py-20 dark:bg-dark lg:py-[120px] px-4 md:px-0">
+    <section className="bg-gray-1 py-20 lg:py-[120px] px-4 md:px-0">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white px-10 py-16 text-center dark:bg-dark-2 sm:px-12 md:px-[60px]">
+            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white px-10 py-16 text-center sm:px-12 md:px-[60px]">
               <div className="mb-10 text-center md:mb-16">
                 <a href="/" className="mx-auto inline-block max-w-[160px]">
                   <h1 className=" font-bold text-5xl text-[#365A4C]">
                     Furni <span className="font-extrabold text-4xl">.</span>
                   </h1>
                 </a>
-                <h2 className="font-bold text-3xl text-gray-600 dark:text-white mb-3 mt-5">
+                <h2 className="font-bold text-3xl text-gray-600 mb-3 mt-5">
                   Sign in to your account
                 </h2>
-                <p className="text-base text-gray-600 dark:text-white">
+                <p className="text-base text-gray-600 ">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Voluptates sed optio, impedit repudiandae, aperiam
                 </p>
@@ -28,7 +28,7 @@ const Login = () => {
                   <div className="flex flex-col space-y-2">
                     <label
                       htmlFor=""
-                      className="text-start text-gray-800 dark:text-white font-semibold text-md"
+                      className="text-start text-gray-800 font-semibold text-md"
                     >
                       Email
                     </label>
@@ -36,7 +36,7 @@ const Login = () => {
                     <div className="flex flex-col space-y-2">
                       <label
                         htmlFor=""
-                        className="text-start text-gray-800 dark:text-white font-semibold text-md"
+                        className="text-start text-gray-800 font-semibold text-md"
                       >
                         Password
                       </label>
@@ -61,11 +61,11 @@ const Login = () => {
               </form>
               <a
                 href="/forgot-password"
-                className="text-gray-600 dark:text-white hover:text-[#365A4C] transition duration-300"
+                className="text-gray-600 hover:text-[#365A4C] transition duration-300"
               >
                 Forgot Password?
               </a>
-              <p className="mt-6 text-gray-600 dark:text-white">
+              <p className="mt-6 text-gray-600">
                 Don't have an account?{" "}
                 <a
                   href="/register"
