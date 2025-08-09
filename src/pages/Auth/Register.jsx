@@ -1,6 +1,5 @@
 import React from "react";
 import AuthPage from "./AuthPage";
-import { FaUserPlus } from "react-icons/fa";
 import Input from "../../Components/Input";
 import Button from "../../Components/Button";
 
