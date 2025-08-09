@@ -6,5 +6,16 @@ import About from "./pages/Website/About";
 import Contact from "./pages/Website/Contact";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 
-export { HomePage, Hero, Home, About, Contact, NotFound, Login, MainLayout };
+export {
+  HomePage,
+  Hero,
+  Home,
+  About,
+  Contact,
+  NotFound,
+  Login,
+  MainLayout,
+  Register,
+};
