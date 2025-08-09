@@ -9,15 +9,26 @@ import {
   Route,
 } from "react-router-dom";
 
-import { HomePage, Home, About, Contact } from "./App";
+import {
+  HomePage,
+  Home,
+  About,
+  Contact,
+  NotFound,
+  Login,
+  MainLayout,
+} from "./App";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />}>
-      <Route index element={<HomePage />} />
+    <Route path="/" element={<MainLayout />} errorElement={<NotFound />}>
+      <Route element={<Home />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
 
-      <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
+      <Route path="login" element={<Login />} />
     </Route>
   )
 );

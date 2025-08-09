@@ -19,7 +19,7 @@ const contactDetails = [
   {
     icon: <FaEnvelope className="text-2xl md:text-4xl text-[#365A4C]" />,
     title: "Email",
-    description: "francismosoti20@gmail.com",
+    description: "support@furni.com",
   },
 ];
 
