@@ -9,7 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { HomePage, Home, About } from "./App";
+import { HomePage, Home, About, Contact } from "./App";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
 
       <Route path="about" element={<About />} />
-      <Route path="contact" element={<div>Contact Page</div>} />
+      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );
