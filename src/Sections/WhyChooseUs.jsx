@@ -51,10 +51,7 @@ const WhyChooseUs = () => {
               <p className="text-3xl">{feature.IconBase}</p>
 
               <h3 className="text-xl font-semibold my-4">{feature.title}</h3>
-              <p className="text-gray-600">
-                We ensure quick and reliable delivery of your furniture to your
-                doorstep.
-              </p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
