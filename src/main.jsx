@@ -17,6 +17,7 @@ import {
   NotFound,
   Login,
   MainLayout,
+  Register,
 } from "./App";
 
 const router = createBrowserRouter(
@@ -29,6 +30,8 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
