@@ -3,6 +3,7 @@ import Input from "../../Components/Input";
 import Button from "../../Components/Button";
 
 import AuthPage from "../../Layout/AuthLayout";
+import { useNavigate } from "react-router-dom";
 
 const loginDetails = {
   title: "Sign in to your account",
@@ -12,9 +13,14 @@ const loginDetails = {
 };
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate("/dashboard");
+  };
   return (
     <AuthPage {...loginDetails}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="flex flex-col space-y-4 gap-6">
           <div className="flex flex-col space-y-2">
             <label
