@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../../Components/Input";
 import Button from "../../Components/Button";
 
-import AuthPage from "./AuthPage";
+import AuthPage from "../../Layout/AuthLayout";
 
 const loginDetails = {
   title: "Sign in to your account",

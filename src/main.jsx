@@ -18,6 +18,8 @@ import {
   Login,
   MainLayout,
   Register,
+  DashBoardLayout,
+  Dashboard,
 } from "./App";
 
 const router = createBrowserRouter(
@@ -31,6 +33,11 @@ const router = createBrowserRouter(
 
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
+      <Route path="dashboard" element={<DashBoardLayout />}>
+        {/* Add dashboard routes here */}
+        <Route index element={<Dashboard />} />
+        {/* Example nested route */}
+      </Route>
     </Route>
   )
 );

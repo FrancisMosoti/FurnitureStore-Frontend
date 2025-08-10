@@ -7,7 +7,8 @@ import Contact from "./pages/Website/Contact";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-
+import DashBoardLayout from "./Layout/DashBoardLayout";
+import Dashboard from "./pages/Dashboard/Dashboard";
 export {
   HomePage,
   Hero,
@@ -18,4 +19,6 @@ export {
   Login,
   MainLayout,
   Register,
+  DashBoardLayout,
+  Dashboard,
 };
