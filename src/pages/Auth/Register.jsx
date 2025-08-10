@@ -1,5 +1,5 @@
 import React from "react";
-import AuthPage from "./AuthPage";
+import AuthPage from "../../Layout/AuthLayout";
 import Input from "../../Components/Input";
 import Button from "../../Components/Button";
 

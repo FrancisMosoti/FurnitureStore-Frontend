@@ -1,5 +1,5 @@
-import Input from "../../Components/Input";
-import Button from "../../Components/Button";
+import Input from "../Components/Input";
+import Button from "../Components/Button";
 
 const AuthPage = ({ children, title, description }) => {
   return (
