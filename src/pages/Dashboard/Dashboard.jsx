@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaChartLine } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -35,7 +35,46 @@ const cardDetails = [
   },
 ];
 
+const recentOrders = [
+  { id: "#1001", client: "Jane Doe", amount: "$250", status: "Completed" },
+  { id: "#1002", client: "John Smith", amount: "$180", status: "Pending" },
+  { id: "#1003", client: "Emily Johnson", amount: "$320", status: "Completed" },
+];
+
+const recentSales = [
+  { id: "S-2001", product: "Sofa", amount: "$500", date: "2025-08-10" },
+  { id: "S-2002", product: "Dining Table", amount: "$350", date: "2025-08-09" },
+  { id: "S-2003", product: "Chair", amount: "$120", date: "2025-08-08" },
+];
+
 const Dashboard = () => {
+  const [orderStatusFilter, setOrderStatusFilter] = useState("All");
+  const [salesProductFilter, setSalesProductFilter] = useState("All");
+
+  const filteredOrders =
+    orderStatusFilter === "All"
+      ? recentOrders
+      : recentOrders.filter((order) => order.status === orderStatusFilter);
+
+  const filteredSales =
+    salesProductFilter === "All"
+      ? recentSales
+      : recentSales.filter((sale) => sale.product === salesProductFilter);
+
+  const getStatusClass = (status) => {
+    switch (status) {
+      case "Pending":
+        return "bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-semibold";
+      case "In progress":
+        return "bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold";
+      case "Fixed":
+        return "bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold";
+      case "Completed":
+        return "bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold";
+      default:
+        return "bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-semibold";
+    }
+  };
   return (
     <div className="bg-[#F5F5F5] max-h-screen w-full overflow-y-scroll">
       <div className="p-6">
@@ -67,13 +106,134 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
-        <section>
-          <div></div>
-        </section>
         <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Recent Activity</h2>
-          {/* Add recent activity content here */}
-          <p className="text-gray-600">No recent activity to display.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+            {/* Recent Orders Table */}
+            <div className="bg-white rounded-lg border border-gray-200 ">
+              <div className="flex justify-between items-center p-4 ">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  Recent Orders
+                </h3>
+                <select
+                  value={orderStatusFilter}
+                  onChange={(e) => setOrderStatusFilter(e.target.value)}
+                  className="border border-gray-300 rounded px-2 py-1 text-sm focus:ring focus:ring-indigo-200"
+                >
+                  <option value="All">All</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Pending">Pending</option>
+                  <option value="In progress">In progress</option>
+                </select>
+              </div>
+              <table className="w-full text-left">
+                <thead className="bg-gray-300">
+                  <tr>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Order ID
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Client
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Amount
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredOrders.map((order, idx) => (
+                    <tr
+                      key={order.id}
+                      className={`hover:bg-[#365A4C]/10 ${
+                        idx !== filteredOrders.length - 1 ? "" : ""
+                      }`}
+                    >
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {order.id}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {order.client}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {order.amount}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        <span className={getStatusClass(order.status)}>
+                          {order.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Recent Sales Table */}
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div className="flex justify-between items-center p-4 ">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  Recent Sales
+                </h3>
+                <select
+                  value={salesProductFilter}
+                  onChange={(e) => setSalesProductFilter(e.target.value)}
+                  className="border border-gray-300 rounded px-2 py-1 text-sm focus:ring focus:ring-indigo-200"
+                >
+                  <option value="All">All</option>
+                  {[...new Set(recentSales.map((sale) => sale.product))].map(
+                    (product) => (
+                      <option key={product} value={product}>
+                        {product}
+                      </option>
+                    )
+                  )}
+                </select>
+              </div>
+              <table className="w-full text-left">
+                <thead className="bg-gray-300">
+                  <tr>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Sale ID
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Product
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Amount
+                    </th>
+                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredSales.map((sale, idx) => (
+                    <tr
+                      key={sale.id}
+                      className={`hover:bg-[#365A4C]/10 ${
+                        idx !== filteredSales.length - 1 ? "" : ""
+                      }`}
+                    >
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {sale.id}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {sale.product}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {sale.amount}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {sale.date}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
