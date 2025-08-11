@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 import { FaChartLine } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
+import Box from "../../Components/Box";
+import BarChart from "../../Components/Charts/BarChart";
 
 const cardDetails = [
   {
@@ -46,6 +52,20 @@ const recentSales = [
   { id: "S-2002", product: "Dining Table", amount: "$350", date: "2025-08-09" },
   { id: "S-2003", product: "Chair", amount: "$120", date: "2025-08-08" },
 ];
+
+const data = {
+  labels: ["Pending", "Completed"],
+  datasets: [
+    {
+      label: "Orders",
+      data: [12, 19],
+
+      backgroundColor: ["rgba(255, 99, 132, 0.2)", "#8FAEA2"],
+      borderColor: ["rgba(255, 99, 132, 1)", "#365A4C"],
+      borderWidth: 1,
+    },
+  ],
+};
 
 const Dashboard = () => {
   const [orderStatusFilter, setOrderStatusFilter] = useState("All");
@@ -106,6 +126,16 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
+        <section className="mt-8 flex flex-col md:flex-row gap-4">
+          <Box>
+            <Doughnut data={data} />
+          </Box>
+
+          <Box>
+            <BarChart />
+          </Box>
+        </section>
+
         <div className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             {/* Recent Orders Table */}
