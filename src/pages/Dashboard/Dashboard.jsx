@@ -96,16 +96,16 @@ const Dashboard = () => {
     }
   };
   return (
-    <div className="bg-[#F5F5F5] max-h-screen w-full overflow-y-scroll">
+    <div className="bg-[#F5F5F5] max-h-screen w-full overflow-y-scroll pt-16">
       <div className="p-6">
         <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cardDetails.map((card, index) => (
             <div
               key={index}
-              className={`p-4 rounded-lg border-1 border-[#365A4C]/50  bg-white text-gray-600`}
+              className={` p-6 md:p-4 rounded-lg border-1 border-[#365A4C]/50  bg-white text-gray-600`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center md:justify-between gap-16 md:gap-0">
                 <i className={`${card.icon} text-3xl`}>{card.icon}</i>
                 <div>
                   <h2 className="text-xl font-semibold">{card.title}</h2>
