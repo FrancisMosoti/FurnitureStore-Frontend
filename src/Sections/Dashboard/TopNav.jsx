@@ -10,7 +10,6 @@ const TopNav = () => {
         </span>
         Frank Mosoti
       </p>
-      {/* Add more dashboard content here */}
     </div>
   );
 };
