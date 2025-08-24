@@ -61,7 +61,7 @@ const data = {
       data: [12, 19],
 
       backgroundColor: ["rgba(255, 99, 132, 0.2)", "#8FAEA2"],
-      borderColor: ["rgba(255, 99, 132, 1)", "#365A4C"],
+      borderColor: ["#FFF", "#FFF"],
       borderWidth: 1,
     },
   ],
@@ -155,49 +155,51 @@ const Dashboard = () => {
                   <option value="In progress">In progress</option>
                 </select>
               </div>
-              <table className="w-full text-left">
-                <thead className="bg-gray-300">
-                  <tr>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Order ID
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Client
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Amount
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Status
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredOrders.map((order, idx) => (
-                    <tr
-                      key={order.id}
-                      className={`hover:bg-[#365A4C]/10 ${
-                        idx !== filteredOrders.length - 1 ? "" : ""
-                      }`}
-                    >
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {order.id}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {order.client}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {order.amount}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        <span className={getStatusClass(order.status)}>
-                          {order.status}
-                        </span>
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left">
+                  <thead className="bg-gray-300">
+                    <tr>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Order ID
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Client
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Amount
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Status
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {filteredOrders.map((order, idx) => (
+                      <tr
+                        key={order.id}
+                        className={`hover:bg-[#365A4C]/10 ${
+                          idx !== filteredOrders.length - 1 ? "" : ""
+                        }`}
+                      >
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {order.id}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {order.client}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {order.amount}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          <span className={getStatusClass(order.status)}>
+                            {order.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* Recent Sales Table */}
@@ -221,47 +223,49 @@ const Dashboard = () => {
                   )}
                 </select>
               </div>
-              <table className="w-full text-left">
-                <thead className="bg-gray-300">
-                  <tr>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Sale ID
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Product
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Amount
-                    </th>
-                    <th className="px-6 py-3 text-sm font-medium text-gray-600">
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredSales.map((sale, idx) => (
-                    <tr
-                      key={sale.id}
-                      className={`hover:bg-[#365A4C]/10 ${
-                        idx !== filteredSales.length - 1 ? "" : ""
-                      }`}
-                    >
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {sale.id}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {sale.product}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {sale.amount}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-700">
-                        {sale.date}
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left">
+                  <thead className="bg-gray-300">
+                    <tr>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Sale ID
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Product
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Amount
+                      </th>
+                      <th className="px-6 py-3 text-sm font-medium text-gray-600">
+                        Date
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {filteredSales.map((sale, idx) => (
+                      <tr
+                        key={sale.id}
+                        className={`hover:bg-[#365A4C]/10 ${
+                          idx !== filteredSales.length - 1 ? "" : ""
+                        }`}
+                      >
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {sale.id}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {sale.product}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {sale.amount}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          {sale.date}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
