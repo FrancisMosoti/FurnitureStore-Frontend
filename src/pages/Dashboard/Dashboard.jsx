@@ -10,6 +10,7 @@ import { FaDollarSign } from "react-icons/fa";
 import Box from "../../Components/Box";
 import BarChart from "../../Components/Charts/BarChart";
 import DashWrapper from "../../Components/DashWrapper";
+import StatsCard from "../../Components/StatsCard";
 
 const cardDetails = [
   {
@@ -101,31 +102,16 @@ const Dashboard = () => {
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cardDetails.map((card, index) => (
-          <div
+          <StatsCard
             key={index}
-            className={` p-6 md:p-4 rounded-lg border-1 border-[#365A4C]/50  bg-white text-gray-600`}
-          >
-            <div className="flex items-center md:justify-between gap-16 md:gap-0">
-              <i className={`${card.icon} text-3xl`}>{card.icon}</i>
-              <div>
-                <h2 className="text-xl font-semibold">{card.title}</h2>
-                <div className="flex flex-row items-center space-x-2">
-                  <p className="text-2xl font-bold">{card.value}</p>
-                  <p
-                    className={`mt-2 text-sm font-medium  p-1 rounded ${
-                      card.percentageChange.startsWith("+")
-                        ? "text-green-800 bg-green-300"
-                        : "text-red-800 bg-red-300"
-                    }`}
-                  >
-                    {card.percentageChange}%
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            title={card.title}
+            value={card.value}
+            icon={card.icon}
+            percentageChange={card.percentageChange}
+          />
         ))}
       </div>
+
       <section className="mt-8 flex flex-col md:flex-row gap-4">
         <Box>
           <Doughnut data={data} />

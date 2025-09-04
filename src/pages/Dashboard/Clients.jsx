@@ -1,5 +1,11 @@
+import DashWrapper from "../../Components/DashWrapper";
+
 const Clients = () => {
-  return <div className="pt-16">Clients Page</div>;
+  return (
+    <DashWrapper>
+      <h1 className="text-3xl font-bold mb-6">Clients</h1>
+    </DashWrapper>
+  );
 };
 
 export default Clients;
