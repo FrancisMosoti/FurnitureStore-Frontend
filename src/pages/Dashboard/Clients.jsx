@@ -7,6 +7,7 @@ import { MdAirplanemodeInactive } from "react-icons/md";
 import Input from "../../Components/Input";
 import { FaSearch } from "react-icons/fa";
 import Table from "../../Components/Table";
+import { getStatusClass } from "../../../../data";
 
 const cardDetails = [
   {
@@ -35,6 +36,58 @@ const cardDetails = [
   },
 ];
 
+const data = [
+  {
+    id: 1,
+    name: "John Doe",
+    email: "joe@gmail.com",
+    phone: "123-456-7890",
+    status: "Active",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    email: "joe@gmail.com",
+    phone: "987-654-3210",
+    status: "Inactive",
+  },
+  {
+    id: 3,
+    name: "Alice Johnson",
+    email: "joe@gmail.com",
+    phone: "555-123-4567",
+    status: "Active",
+  },
+  {
+    id: 4,
+    name: "Bob Brown",
+    email: "joe@gmail.com",
+    phone: "444-987-6543",
+    status: "Active",
+  },
+];
+
+const columns = [
+  { header: "ID", accessor: "id" },
+  { header: "Name", accessor: "name" },
+  { header: "Email", accessor: "email" },
+  { header: "Phone", accessor: "phone" },
+  {
+    header: "Status",
+    accessor: "status",
+    render: (value) => <span className={getStatusClass(value)}>{value}</span>,
+  },
+  //   {
+  //     header: "Actions",
+  //     accessor: "actions",
+  //     render: (value, row) => (
+  //       <button className="bg-blue-600  p-1 rounded-sm text-white hover:bg-blue-700">
+  //         View
+  //       </button>
+  //     ),
+  //   },
+];
+
 const Clients = () => {
   return (
     <DashWrapper>
@@ -60,7 +113,7 @@ const Clients = () => {
           <FaSearch className="text-2xl absolute top-2 left-2" />
         </span>
       </div>
-      {/* <Table /> */}
+      <Table columns={columns} data={data} />
     </DashWrapper>
   );
 };
