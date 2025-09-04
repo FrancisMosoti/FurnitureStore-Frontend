@@ -9,6 +9,9 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import DashBoardLayout from "./Layout/DashBoardLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Clients from "./pages/Dashboard/Clients";
+import Orders from "./pages/Dashboard/Orders";
+import Settings from "./pages/Dashboard/Settings";
 export {
   HomePage,
   Hero,
@@ -21,4 +24,7 @@ export {
   Register,
   DashBoardLayout,
   Dashboard,
+  Clients,
+  Orders,
+  Settings,
 };

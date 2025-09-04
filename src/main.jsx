@@ -20,6 +20,9 @@ import {
   Register,
   DashBoardLayout,
   Dashboard,
+  Clients,
+  Orders,
+  Settings,
 } from "./App";
 
 const router = createBrowserRouter(
@@ -36,7 +39,9 @@ const router = createBrowserRouter(
       <Route path="dashboard" element={<DashBoardLayout />}>
         {/* Add dashboard routes here */}
         <Route index element={<Dashboard />} />
-        {/* Example nested route */}
+        <Route path="clients" element={<Clients />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Route>
   )
