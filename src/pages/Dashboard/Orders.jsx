@@ -72,11 +72,11 @@ const data = [
 ];
 
 const menuItems = [
-  { label: "View", action: () => alert("View Details clicked") },
+  // { label: "View", action: () => alert("View Details clicked") },
   // { label: "Edit", action: () => alert("Edit Order clicked") },
   { label: "Completed", action: () => alert("Marked as Completed") },
   { label: "In Progress", action: () => alert("Marked In Progress") },
-  { label: "Delete", action: () => alert("Delete Order clicked") },
+  // { label: "Delete", action: () => alert("Delete Order clicked") },
 ];
 
 const columns = [
@@ -95,7 +95,7 @@ const columns = [
     header: "Actions",
     accessor: "actions",
     render: () => (
-      <span className="flex items-center gap-4 ">
+      <span className="flex items-center gap-4">
         <BasicPopover menuItems={menuItems} />
         <FaEdit className="text-gray-600 hover:text-gray-800 cursor-pointer text-2xl" />
         <MdDeleteForever className="text-red-500 hover:text-red-800 cursor-pointer text-2xl" />

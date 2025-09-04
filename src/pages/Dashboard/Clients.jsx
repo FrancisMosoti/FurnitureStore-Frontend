@@ -8,6 +8,8 @@ import Input from "../../Components/Input";
 import { FaSearch } from "react-icons/fa";
 import Table from "../../Components/Table";
 import { getStatusClass } from "../../data";
+import { Doughnut } from "react-chartjs-2";
+import BarLine from "../../Components/Charts/BarLine";
 
 const cardDetails = [
   {
@@ -200,6 +202,20 @@ const columns = [
   //   },
 ];
 
+const activeMembers = {
+  labels: ["Active", "Inactive"],
+  datasets: [
+    {
+      label: "Clients",
+      data: [20, 5],
+
+      backgroundColor: ["rgba(255, 99, 132, 0.2)", "#8FAEA2"],
+      borderColor: ["#FFF", "#FFF"],
+      borderWidth: 1,
+    },
+  ],
+};
+
 const Clients = () => {
   return (
     <DashWrapper>
@@ -214,6 +230,12 @@ const Clients = () => {
             percentageChange={card.percentageChange}
           />
         ))}
+      </div>
+      <div className="flex  gap-6 my-6  justify-center items-center p-4 rounded-lg border border-gray-200 flex-col md:flex-row">
+        <BarLine />
+        <div>
+          <Doughnut data={activeMembers} />
+        </div>
       </div>
       <div className=" mt-6 flex justify-end">
         <span className="relative ">
