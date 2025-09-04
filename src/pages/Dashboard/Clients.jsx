@@ -40,30 +40,142 @@ const data = [
   {
     id: 1,
     name: "John Doe",
-    email: "joe@gmail.com",
-    phone: "123-456-7890",
+    email: "john.doe@gmail.com",
+    phone: "+254 712 345 678",
     status: "Active",
   },
   {
     id: 2,
     name: "Jane Smith",
-    email: "joe@gmail.com",
-    phone: "987-654-3210",
+    email: "jane.smith@gmail.com",
+    phone: "+254 713 456 789",
     status: "Inactive",
   },
   {
     id: 3,
     name: "Alice Johnson",
-    email: "joe@gmail.com",
-    phone: "555-123-4567",
+    email: "alice.johnson@gmail.com",
+    phone: "+254 714 567 890",
     status: "Active",
   },
   {
     id: 4,
     name: "Bob Brown",
-    email: "joe@gmail.com",
-    phone: "444-987-6543",
+    email: "bob.brown@gmail.com",
+    phone: "+254 715 678 901",
     status: "Active",
+  },
+  {
+    id: 5,
+    name: "Michael Kamau",
+    email: "michael.kamau@gmail.com",
+    phone: "+254 716 789 012",
+    status: "Inactive",
+  },
+  {
+    id: 6,
+    name: "Grace Wanjiku",
+    email: "grace.wanjiku@gmail.com",
+    phone: "+254 717 890 123",
+    status: "Active",
+  },
+  {
+    id: 7,
+    name: "David Otieno",
+    email: "david.otieno@gmail.com",
+    phone: "+254 718 901 234",
+    status: "Inactive",
+  },
+  {
+    id: 8,
+    name: "Mary Achieng",
+    email: "mary.achieng@gmail.com",
+    phone: "+254 719 012 345",
+    status: "Active",
+  },
+  {
+    id: 9,
+    name: "Peter Njoroge",
+    email: "peter.njoroge@gmail.com",
+    phone: "+254 720 123 456",
+    status: "Active",
+  },
+  {
+    id: 10,
+    name: "Ann Wambui",
+    email: "ann.wambui@gmail.com",
+    phone: "+254 721 234 567",
+    status: "Inactive",
+  },
+  {
+    id: 11,
+    name: "Joseph Mwangi",
+    email: "joseph.mwangi@gmail.com",
+    phone: "+254 722 345 678",
+    status: "Active",
+  },
+  {
+    id: 12,
+    name: "Lucy Nduta",
+    email: "lucy.nduta@gmail.com",
+    phone: "+254 723 456 789",
+    status: "Active",
+  },
+  {
+    id: 13,
+    name: "Samuel Kiptoo",
+    email: "samuel.kiptoo@gmail.com",
+    phone: "+254 724 567 890",
+    status: "Inactive",
+  },
+  {
+    id: 14,
+    name: "Naomi Chebet",
+    email: "naomi.chebet@gmail.com",
+    phone: "+254 725 678 901",
+    status: "Active",
+  },
+  {
+    id: 15,
+    name: "Daniel Kariuki",
+    email: "daniel.kariuki@gmail.com",
+    phone: "+254 726 789 012",
+    status: "Inactive",
+  },
+  {
+    id: 16,
+    name: "Esther Njeri",
+    email: "esther.njeri@gmail.com",
+    phone: "+254 727 890 123",
+    status: "Active",
+  },
+  {
+    id: 17,
+    name: "James Onyango",
+    email: "james.onyango@gmail.com",
+    phone: "+254 728 901 234",
+    status: "Active",
+  },
+  {
+    id: 18,
+    name: "Sarah Atieno",
+    email: "sarah.atieno@gmail.com",
+    phone: "+254 729 012 345",
+    status: "Inactive",
+  },
+  {
+    id: 19,
+    name: "Paul Mworia",
+    email: "paul.mworia@gmail.com",
+    phone: "+254 730 123 456",
+    status: "Active",
+  },
+  {
+    id: 20,
+    name: "Cynthia Wairimu",
+    email: "cynthia.wairimu@gmail.com",
+    phone: "+254 731 234 567",
+    status: "Inactive",
   },
 ];
 
@@ -113,7 +225,7 @@ const Clients = () => {
           <FaSearch className="text-2xl absolute top-2 left-2" />
         </span>
       </div>
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} rowsPerPage={10} />
     </DashWrapper>
   );
 };
