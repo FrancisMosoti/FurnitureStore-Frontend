@@ -7,7 +7,7 @@ import { MdAirplanemodeInactive } from "react-icons/md";
 import Input from "../../Components/Input";
 import { FaSearch } from "react-icons/fa";
 import Table from "../../Components/Table";
-import { getStatusClass } from "../../../../data";
+import { getStatusClass } from "../../data";
 
 const cardDetails = [
   {
