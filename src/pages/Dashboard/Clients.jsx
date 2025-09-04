@@ -4,6 +4,9 @@ import { FaUsers } from "react-icons/fa6";
 import { FaUserPlus } from "react-icons/fa";
 import { MdAirplanemodeActive } from "react-icons/md";
 import { MdAirplanemodeInactive } from "react-icons/md";
+import Input from "../../Components/Input";
+import { FaSearch } from "react-icons/fa";
+import Table from "../../Components/Table";
 
 const cardDetails = [
   {
@@ -47,6 +50,17 @@ const Clients = () => {
           />
         ))}
       </div>
+      <div className=" mt-6 flex justify-end">
+        <span className="relative ">
+          <Input
+            type="text"
+            placeholder="Search by Phone Number"
+            className="pl-10 pr-4 py-2 "
+          />
+          <FaSearch className="text-2xl absolute top-2 left-2" />
+        </span>
+      </div>
+      {/* <Table /> */}
     </DashWrapper>
   );
 };
