@@ -35,7 +35,7 @@ const Table = ({ columns, data, rowsPerPage = 5 }) => {
                 {columns.map((col) => (
                   <td
                     key={col.accessor}
-                    className="px-6 py-4 text-medium font-medium text-gray-700"
+                    className="px-6 py-4 text-medium font-medium text-gray-700 text-nowrap"
                   >
                     {col.render
                       ? col.render(row[col.accessor], row)
