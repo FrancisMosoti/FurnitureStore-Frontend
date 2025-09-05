@@ -1,7 +1,7 @@
 const Button = ({ children, onClick, className, type }) => {
   return (
     <button
-      className={`font-semibold p-4 cursor-pointer ${className}`}
+      className={`font-semibold cursor-pointer ${className}`}
       onClick={onClick}
       type={type}
     >

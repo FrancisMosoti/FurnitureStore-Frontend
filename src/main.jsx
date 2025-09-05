@@ -23,6 +23,7 @@ import {
   Clients,
   Orders,
   Settings,
+  Logout,
 } from "./App";
 
 const router = createBrowserRouter(
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
 
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
+      <Route path="logout" element={<Logout />} />
       <Route path="dashboard" element={<DashBoardLayout />}>
         {/* Add dashboard routes here */}
         <Route index element={<Dashboard />} />

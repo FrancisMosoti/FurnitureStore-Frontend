@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Clients from "./pages/Dashboard/Clients";
 import Orders from "./pages/Dashboard/Orders";
 import Settings from "./pages/Dashboard/Settings";
+import Logout from "./pages/Dashboard/Logout";
 export {
   HomePage,
   Hero,
@@ -27,4 +28,5 @@ export {
   Clients,
   Orders,
   Settings,
+  Logout,
 };
